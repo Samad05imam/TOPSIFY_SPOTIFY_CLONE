@@ -1,0 +1,696 @@
+body{
+    background-color: white;
+    background-color: grey;
+    overflow: hidden;
+}
+
+:root{
+    --nav_bgc : rgba(0, 0, 0, 0.6);
+    --log_bgc: white;
+    --log_c :black;
+    --sign_c :grey;
+    --home_bgc:rgba(81, 81, 81);
+    --color_white:white;
+    --gradiant_color:linear-gradient(to bottom , rgba(0, 0, 0, 0.4) , rgba(0, 0, 0, 1));
+    --artist_bgc:linear-gradient(to bottom , rgba(0, 0, 0, 0.2) , rgba(0, 0, 0, 0.4));
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    height: 10vh;
+    width: 100vw;
+    border: none;
+    position: fixed;
+    background-color: var(--nav_bgc);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logo{
+    margin-right: 26.2vw;
+    text-align: center;
+    margin-left: 1.5vw;
+}
+
+.nav .buttons{
+    color: var(--log_c);
+    background-color: var(--log_bgc);
+    font-size: .94vw;
+    font-weight: 600;
+    border: none;
+    border-radius: 1.5vw;
+    width: 8vw;
+    cursor: pointer;
+    height: 6vh;
+}
+
+.nav .button{
+    font-size: .94vw;
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: 1.5vw;
+    width: 8vw;
+    height: 6vh;
+    background: transparent;  
+    border:none ; 
+    color:var(--sign_c);
+}
+
+.buttons:hover{
+    border: 10px solid var(--color_white);
+    font-size: 1.1vw;
+}
+
+.button:hover{
+    font-size: 1.1vw;
+    color:var(--log_bgc)
+}
+
+.home{
+    background-color: var(--home_bgc);
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    width: 2.45vw;
+    height: 2.35vw;
+    margin-right: .6vw;
+}
+
+#inn{
+    width: 15vw;
+    font-size: .94vw;
+    background-color: var(--home_bgc);
+    border: none;
+    outline: none;
+    padding: .16vw;
+}
+
+::placeholder{
+    color: var(--color_white);
+    font-size: .94vw;
+    background: transparent;
+}
+
+.input:hover{
+    border:2px solid var(--color_white);
+    margin-right: calc(19vw - .23vw);
+    
+}
+
+.home:hover{
+    border:1px solid var(--color_white);
+    margin-right: .5vw;
+}
+
+.input{
+    width:24vw;
+    margin-right: 19vw;
+    padding: .94vw;
+    background-color: var(--home_bgc);
+    height: 2vh;
+    border:none;
+    border-radius: 2.09vw;
+}
+
+.left{
+    width: 25vw;
+    margin-top: 11vh;
+    height: 85vh;
+    margin-right: .26vw;
+    padding:.89vw 1.25vw;
+    background:var(--gradiant_color);
+    border: none;
+    border-radius: .53vw;
+    /* overflow-y:scroll; */
+}
+
+.right{
+    width: 75vw;
+    height: 77.5vh;
+    margin-top: 11vh;
+    background:var(--gradiant_color);
+    border: none;
+    border-radius: .53vw;
+    padding: .26vw;
+}
+
+.heading1{
+    margin: 1vh;
+    display: flex;
+}
+
+.heading1 h2 , .heading1 h5{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--color_white);
+    text-decoration: none;
+}
+
+.heading1 h2:hover , .heading1 h5:hover{
+    text-decoration: underline;
+}
+
+.heading2{
+    margin: 1vh;
+    display: flex;
+    margin-top: 3vh;
+}
+.heading2 h2 , .heading2 h5{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--color_white);
+    text-decoration: none;
+}
+.heading2 h2:hover , .heading2 h5:hover{
+    text-decoration: underline;
+}
+.artistContainer{
+    margin: 2vh;
+    display: flex;
+}
+.artist{
+    width: 12vw;
+    position: relative;
+    border-radius: 10px;
+}
+.artist img{
+    width: 80%;
+    /* margin-top: 1vw; */
+    margin-left:10%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.artist:hover{
+    background: var(--artist_bgc);
+    .play{
+        opacity:1;
+        top:15vh
+    }
+}
+.artText1{
+    margin-left:10%;
+    color: var(--color_white);
+    font-size: larger;
+    font-weight:bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.artText2{
+    margin-left:10%;
+    color: var(--color_white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+.play{    
+    position: absolute;
+    top: 20vh;
+    width: 45px;
+    height: 45px;
+    left: 8vw;
+    border-radius: 3px solid black;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+.albumContainer{
+    margin: 2vh;
+    display: flex;
+}
+.album{
+    width: 12vw;
+    position: relative;
+    border-radius: 10px;
+}
+.album img{
+    width: 80%;
+    margin-top: 1vw;
+    margin-left:10%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.album:hover{
+    background: var(--artist_bgc);
+    .play{
+        opacity:1;
+        top:15vh
+    }
+}
+.albumText1{
+    margin-left:10%;
+    color: var(--color_white);
+    font-weight:bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.albumText2{
+    margin-left:10%;
+    color: var(--sign_c);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.playbar{
+    position: absolute;
+    bottom: 1.5vh;
+    background-color: var(--nav_bgc);
+    /* background-color: rgb(192, 17, 17); */
+    width: 72.5vw;
+    height: 40px;
+    overflow:hidden;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.songbuttons>img{
+    cursor: pointer;
+    padding: 3px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: black;
+}
+.songList{
+    height: 50vh;
+    overflow:auto ;
+    margin:0 10px 44px 10px ;
+    /* position: fixed; */
+    padding-bottom: 100px;
+}
+.left-below{
+    color: white;
+    gap: 20px;
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.songList ul{
+    padding-bottom: 100px;
+    position: static;
+}
+.songList ul li{
+    list-style-type: decimal;
+    font-size: 13px;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px 0 ;
+    border: 1px solid white;
+    margin: 12px 0;
+    padding: 13px;
+    border-radius: 5px;
+}
+
+.playnow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 64px; */
+}
+.playnow span{
+    font-size: 13px;
+    width: 60px;
+    padding: 7px;
+}
+.info >div{
+    width: 100px;
+    font-size: 13px;
+    word-break: break-all;
+    
+}
+
+
+.seekbar{
+    height: 3px;
+    width: 97.5%;
+    background-color:  rgba(255, 255, 255, 0.541);
+    border-radius: 10px;
+    position: absolute;
+    margin: 3px;
+    left: 10px;
+    bottom: 4px;
+    cursor: pointer;
+}
+
+.circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 13px;
+    background-color: white;
+    position: relative;
+    bottom:7px;
+    left: 0%;
+    transition: left .2;
+}
+
+.songinfo , .songtime-volume{
+    color: white;
+    padding: 0 12px;
+    font-family: sans-serif;
+}
+
+/* .songinfo , .songbuttons , .songtime-volume{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+} */
+
+.footer>p{
+    bottom: 0%;
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+    top:60vh;
+}
+.songinfo{
+    width: 24vw;
+    display: flex;
+    justify-content: start;
+}
+.songbuttons {
+    width: 24vw;
+    display: flex;
+    justify-content: center;
+}
+.songtime-volume{
+    width: 24vw;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+
+.volume{
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* align-items: center; */
+}
+.volume .img , .range input{
+    cursor: pointer;
+}
+input[type='range'] {
+    overflow: hidden;
+    width: 70px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: aqua;
+  }
+.abovebar{
+    display: flex;
+    /* margin-top: 2px; */
+    /* justify-content: space-between; */
+    align-items: center;
+
+}
+.hambuger{
+    display: none;
+    cursor: pointer;
+}
+.playbar{
+    height: -10vh;
+}
+.close{
+    display: none;
+    cursor: pointer;
+}
+/* Container with fixed height and overflow */
+.scrollable-content {
+    height: 5px; /* Fixed height of the container */
+    overflow-y: auto; /* Enable vertical scroll */
+    padding: 10px; /* Prevent content from hiding under the scrollbar */
+    background-color: #1a1a1a; /* Dark background to fit the black theme */
+    border-radius: 5px;
+}
+
+/* Style for the scroll bar */
+::-webkit-scrollbar {
+    width: 12px;  /* Width of the vertical scrollbar */
+    height: 5px; /* Height of the horizontal scrollbar */
+}
+
+/* Style for the track (background area of the scrollbar) */
+::-webkit-scrollbar-track {
+    background-color: #333; /* Dark background for the track */
+    border-radius: 10px;
+}
+
+/* Style for the thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background-color: #666; /* Medium dark color for the thumb */
+    border-radius: 10px;
+    border: 3px solid #333; /* Border that matches the track color */
+}
+
+/* Hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #888; /* Lighter gray when hovered */
+}
+
+/* Optional: Style for the scrollbar corner (if visible) */
+::-webkit-scrollbar-corner {
+    background-color: #333; /* Dark corner background */
+}
+
+@media (max-width : 1250px){
+    .songbuttons>#previous , .songbuttons>#play, .songbuttons>#next{
+        width: 35px;
+        height: 35px;
+    }
+    *{
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+    .nav{
+        width: 100vw;
+    }
+    .nav>.logo>img{
+        width:5vw
+    }
+    .nav>.logo>.text{
+        font-size: 20px;
+    }
+    .buttonss>.button , .buttonss>.buttons{
+        width: 10vw;
+        padding: 20px;
+        height: 5vh;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .left{
+        position: absolute;
+        left: -120%;
+        height: 65vh;
+        transition: all .3s;
+        z-index: 1;
+        background-color: black;
+        width: 40vw;   
+    }
+    .lib>img{
+        width: 5vw;
+    }
+    .lib>.text , .Left-below-heading{
+        font-size: 25px;
+    }
+    .left-below>.songList ul li{
+        font-size: 20px;
+        height: 30px;
+    }
+    .right{
+        width: 100vw;
+        height: 70vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .playbar{
+        width: 94vw;
+        height: 13vh;
+        font-size: 10px;
+        margin-left: 2vw;
+
+    }
+    .songbuttons img{
+        width: 15px;
+    }
+    .seekbar{
+        width: 90%;
+        margin: 6px 5%;
+    }
+
+    .songinfo , .songbuttons , .songtime-volume{
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+        height: 3vh;
+    }
+    .songtime-volume{
+        margin-top: 1vh;
+    }
+
+    .hambuger{
+        display: block;
+        position: fixed;
+    }
+    .close{
+        display: block;
+    }
+    .abovebar{
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .artist:hover , .album:hover{
+        .play{
+            opacity: 0;
+        }
+    }
+    .heading1{
+        margin-top: 40px;
+    }
+    .artistContainer , .albumContainer{
+        width:95vw;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .artist , .album{
+        width: 32vw;
+    }
+
+    .songList{
+        height: 30vh;
+    }
+    
+}
+
+@media (max-width:650px){
+    *{
+        font-size: 15px;
+    }
+    .right{
+        width: 100vw;
+        height: 65vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .artist:hover{
+    .play{
+        opacity: 0;
+    }
+}
+    .artistContainer , .albumContainer{
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        flex-direction: column;
+        margin-left: 10vw;
+    }
+    .artist , .album{
+        width: 60vw;
+    }
+    .nav>.home , .nav>.input{
+        display: none;
+    }
+    .nav>.logo>img{
+        width: 20px;
+    }
+    .nav>.logo>.text{
+        font-size: 15px;
+        font-family: sans-serif;
+    }
+    .left{
+        width: 85vw;
+    }
+    .buttonss{
+        gap: 10px;
+    }
+    .buttonss>.button , .buttonss>.buttons{
+        font-size: 15px;
+        width: 65px;
+        height: 35px;
+        padding: 5px;
+        border: 1px solid;
+        gap: 10px;
+        /* background-color: red; */
+    }
+    .playbar{
+        height: 13vh;
+        width: 90vw;
+    }
+    .songbuttons>#previous , .songbuttons>#play, .songbuttons>#next{
+        width: 25px;
+        height: 25px;
+    }
+    .seekbar{
+        margin-top: 5px;
+        height: 5px;
+        width: 85%;
+    }
+    .circle{
+        width: 10px;
+        bottom: 2px;
+        height: 10px;
+        left: 0%;
+    }
+    .right>.hambuger {
+        width: 30px;
+        position: fixed;
+        /* height: 50px; */
+    }
+    .close{
+        width: 25px;
+    }
+    .lib>.text{
+        font-size: 15px;
+    }
+    .heading1{
+        margin-top: 40px;
+    }
+    .songinfo{
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .songtime{
+        font-size: 15px;
+        display: flex;
+        margin-bottom: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+
+
+/* 
+// Define your media query
+const mediaQuery = window.matchMedia('(max-width: 600px)');
+
+// Add a listener function that will be executed when the media query matches
+function handleMediaQueryChange(event) {
+  if (event.matches) {
+        document.querySelector(".songtime").innerHTML = `${convertSecondsToMinutesSeconds(currentSong.currentTime)}/${convertSecondsToMinutesSeconds(currentSong.duration)}`;
+        document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 97 + "%";
+  } else {
+    document.querySelector(".songtime").innerHTML = `${convertSecondsToMinutesSeconds(currentSong.currentTime)}/${convertSecondsToMinutesSeconds(currentSong.duration)}`;
+    document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
+  }
+}
+
+// Register the listener with the media query
+mediaQuery.addEventListener('timeupdate', handleMediaQueryChange);
+
+// Initial check to see if the media query matches
+handleMediaQueryChange(mediaQuery); */
