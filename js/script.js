@@ -14,7 +14,7 @@ async function getSongs(folder) {
     currfolder = folder;
     try {
         // Fetch data from the local server
-        let response = await fetch(`https://vd1k00hr-5500.inc1.devtunnels.ms/${folder}/`);
+        let response = await fetch(`https://g4tfzrp8-5500.inc1.devtunnels.ms/${folder}/`);
 
         // Check if the response was successful
         if (!response.ok) {
@@ -53,7 +53,7 @@ async function getSongs(folder) {
 const PlayMusic = (track, pause = false) => {
     
     play.src = "photo/pause.svg";
-    currentSong.src = `https://vd1k00hr-5500.inc1.devtunnels.ms/${currfolder}/${track}`;
+    currentSong.src = `https://g4tfzrp8-5500.inc1.devtunnels.ms/${currfolder}/${track}`;
     
     if (!pause) {
         currentSong.play();
