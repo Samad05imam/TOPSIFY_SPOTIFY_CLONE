@@ -15,6 +15,7 @@ async function getSongs(folder) {
     try {
         // Fetch data from the local server
         let response = await fetch(`https://g4tfzrp8-5500.inc1.devtunnels.ms/${folder}/`);
+        // let response = await fetch(`http://127.0.0.1:5500/topsify.html/${folder}/`);
 
         // Check if the response was successful
         if (!response.ok) {
@@ -54,6 +55,7 @@ const PlayMusic = (track, pause = false) => {
     
     play.src = "photo/pause.svg";
     currentSong.src = `https://g4tfzrp8-5500.inc1.devtunnels.ms/${currfolder}/${track}`;
+    // currentSong.src = `http://127.0.0.1:5500/topsify.html/${currfolder}/${track}`;
     
     if (!pause) {
         currentSong.play();
