@@ -15,7 +15,8 @@ async function getSongs(folder) {
     try {
         // Fetch data from the local server
         // let response = await fetch(`https://g4tfzrp8-5500.inc1.devtunnels.ms/${folder}/`);
-        let response = await fetch(`https://github.com/Samad05imam/TOPSIFY_SPOTIFY_CLONE/${folder}/`);
+        // let response = await fetch(`https://github.com/Samad05imam/TOPSIFY_SPOTIFY_CLONE/${folder}/`);
+        let response = await fetch(`https://samad05imam.github.io/TOPSIFY_SPOTIFY_CLONE/${folder}/`);
 
         // Check if the response was successful
         if (!response.ok) {
@@ -55,7 +56,8 @@ const PlayMusic = (track, pause = false) => {
     
     play.src = "photo/pause.svg";
     // currentSong.src = `https://g4tfzrp8-5500.inc1.devtunnels.ms/${currfolder}/${track}`;
-    currentSong.src = `https://github.com/Samad05imam/TOPSIFY_SPOTIFY_CLONE/${currfolder}/${track}`;
+    // currentSong.src = `https://github.com/Samad05imam/TOPSIFY_SPOTIFY_CLONE/${currfolder}/${track}`;
+    currentSong.src = `https://samad05imam.github.io/TOPSIFY_SPOTIFY_CLONE/${currfolder}/${track}`;
     
     if (!pause) {
         currentSong.play();
